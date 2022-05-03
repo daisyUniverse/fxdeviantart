@@ -25,10 +25,10 @@ def fxdeviantart(subpath):
     # Return the template with the data
     return render_template(
         "index.html",
-        user=data["author_name"],
+        user="by " + data["author_name"],
         img=data["url"],
         url=origin,
-        desc=data["title"],
+        title=data["title"],
         site_name=config.get("site_config", "site_name"),
         colour="#" + config.get("site_config", "colour"),
     )
