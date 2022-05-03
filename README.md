@@ -8,5 +8,5 @@
     This project is licensed under the <a href="https://github.com/robinuniverse/WTFNONPL">WTFNONPL</a>
 </p>
 <p align="center">
-    made with 💖 by Robin Universe
+    made with 💖 by Robin Universe and Dania Rifki
 </p>
