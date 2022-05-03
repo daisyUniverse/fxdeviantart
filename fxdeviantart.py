@@ -7,9 +7,9 @@ import json
 # Initialise Flask
 app = Flask(__name__)
 
-# Initialise ConfigParser and make it read the config file
-config = ConfigParser()
-config.read("config.ini")
+# Open config.json and load it into a dictionary variable
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
 
 # Main Function
 @app.route("/<path:subpath>")
@@ -29,15 +29,15 @@ def fxdeviantart(subpath):
         img=data["url"],
         url=origin,
         title=data["title"],
-        site_name=config.get("site_config", "site_name"),
-        colour="#" + config.get("site_config", "colour"),
+        site_name=config["siteConfig"]["siteName"],
+        color=config["siteConfig"]["embedColor"],
     )
 
 
 # Debugging stuff here
 if __name__ == "__main__":
-    app.run(debug=config.getboolean("debug_config", "debug"))
+    app.run(debug=config["debugConfig"]["debug"])
     app.run(
-        host=config.get("debug_config", "host"),
-        port=config.getint("debug_config", "port"),
+        host=config["debugConfig"]["host"],
+        port=config["debugConfig"]["port"],
     )
