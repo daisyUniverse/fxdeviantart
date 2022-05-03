@@ -33,6 +33,7 @@ def fxdeviantart(subpath):
         colour="#" + config.get("site_config", "colour"),
     )
 
+
 # Debugging stuff here
 if __name__ == "__main__":
     app.run(debug=config.getboolean("debug_config", "debug"))
