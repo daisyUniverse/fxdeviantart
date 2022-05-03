@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from configparser import ConfigParser
 from urllib.parse import quote
 from urllib.request import urlopen
 import json
