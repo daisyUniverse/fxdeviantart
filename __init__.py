@@ -3,6 +3,10 @@ from urllib.parse import quote
 from urllib.request import urlopen
 import json
 
+# Manually get data from the deviantArt oembed API to build a better and more reliable embed
+# Robin Universe w/ tweaks from Dania
+# 05 . 04 . 22
+
 # Initialise Flask
 app = Flask(__name__)
 
@@ -30,13 +34,4 @@ def fxdeviantart(subpath):
         title=data["title"],
         site_name=config["siteConfig"]["siteName"],
         color=config["siteConfig"]["embedColor"],
-    )
-
-
-# Debugging stuff here
-if __name__ == "__main__":
-    app.run(debug=config["debugConfig"]["debug"])
-    app.run(
-        host=config["debugConfig"]["host"],
-        port=config["debugConfig"]["port"],
     )
