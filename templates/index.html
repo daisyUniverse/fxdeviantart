@@ -1,14 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block head %}
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-{% block head %}
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="fxDeviantArt" />
-    <meta name="twitter:description" content="{{ desc }}" />
-    <meta name="twitter:image" content="{{ img }}" />
-    <meta http-equiv = "refresh" content = "0; url = {{ url }}" />
-{% endblock %}
+<!-- Header -->
+<meta property="og:site_name" content="{{ site_name }}" />
+<meta content="{{ color }}" data-react-helmet="true" name="theme-color" />
 
-{% block body %}
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ user }}" />
+<meta name="twitter:image" content="{{ img }}" />
+<meta http-equiv="refresh" content="0; url = {{ url }}" />
 
-{% endblock %}
+<!-- Open Graph -->
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:image" content="{{ img }}" />
+<meta property="og:description" content="{{ user }}" />
+<meta property="og:url" content="{{ url }}" />
+{% endblock %} {% block body %} {% endblock %}
